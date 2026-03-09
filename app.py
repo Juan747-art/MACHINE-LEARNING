@@ -23,21 +23,35 @@ def login():
         return redirect(url_for('dashboard'))
     else:
         return "Invalid username or password"
-    
-@app.route('/LinearRegression', methods=["GET","POST"])
+
+
+@app.route('/LinearRegression', methods=["GET", "POST"])
 def calculateGrade():
-   if request.method=="POST":
-    hours = float(request.form["hours"]) 
-       
-   result = LinearRegression.calculateGrade(20)
-   return render_template("LinearRegressionGrade",result=result)
+
+    result = None
+
+    if request.method == "POST":
+        hours = float(request.form["hours"])
+        result = LinearRegression.calculateGrade(hours)
+
+    return render_template("LinearRegressionGrade.html", result=result)
+
+@app.route('/predict', methods=["GET","POST"])
+def predict():
+
+    result = None
+
+    if request.method == "POST":
+        hours = float(request.form["hours"])
+        result = LinearRegression.calculateGrade(hours)
+
+    return render_template("predict.html", result=result)
 
 
 @app.route('/dashboard')
 def dashboard():
 
-    # Simulated ML prediction
-    prediction = random.randint(60,95)
+    prediction = random.randint(60, 95)
 
     return render_template("dashboard.html", prediction=prediction)
 
