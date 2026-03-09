@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Machine Learning Dashboard</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background-color:#f4f6f9;
+    margin:0;
+}
+
+.header{
+    background:#2c3e50;
+    color:white;
+    padding:20px;
+    font-size:24px;
+}
+
+.container{
+    padding:40px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    margin-bottom:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.ml-result{
+    font-size:40px;
+    color:#27ae60;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:20px;
+}
+
+.stat{
+    font-size:28px;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+Machine Learning Dashboard
+</div>
+
+<div class="container">
+
+<div class="card">
+<h2>Welcome to your dashboard</h2>
+<p>This system demonstrates a simple Machine Learning prediction.</p>
+</div>
+
+<div class="card">
+
+<h2>ML Prediction</h2>
+
+<p>Predicted success probability:</p>
+
+<div class="ml-result">
+{{prediction}} %
+</div>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Users Analyzed</h3>
+<div class="stat">1240</div>
+</div>
+
+<div class="card">
+<h3>Model Accuracy</h3>
+<div class="stat">91%</div>
+</div>
+
+<div class="card">
+<h3>Predictions Today</h3>
+<div class="stat">342</div>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
