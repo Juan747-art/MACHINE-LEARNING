@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
+<meta charset="UTF-8">
 <title>Machine Learning Dashboard</title>
 
 <style>
@@ -17,6 +18,7 @@ body{
     color:white;
     padding:20px;
     font-size:24px;
+    text-align:center;
 }
 
 .container{
@@ -47,6 +49,34 @@ body{
     font-weight:bold;
 }
 
+.btn{
+    padding:12px 25px;
+    font-size:16px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    margin-right:10px;
+    transition:0.3s;
+}
+
+.linear{
+    background:#27ae60;
+    color:white;
+}
+
+.linear:hover{
+    background:#1e8449;
+}
+
+.logistic{
+    background:#2980b9;
+    color:white;
+}
+
+.logistic:hover{
+    background:#1f618d;
+}
+
 </style>
 
 </head>
@@ -59,23 +89,22 @@ Machine Learning Dashboard
 
 <div class="container">
 
+
 <div class="card">
 <h2>Welcome to your dashboard</h2>
-<p>This system demonstrates a simple Machine Learning prediction.</p>
+<p>This system demonstrates a Machine Learning prediction using Linear and Logistic Regression.</p>
 </div>
 
 <div class="card">
-
 <h2>ML Prediction</h2>
-
 <p>Predicted success probability:</p>
 
 <div class="ml-result">
 {{prediction}} %
 </div>
-
 </div>
 
+<!-- Stats -->
 <div class="grid">
 
 <div class="card">
@@ -95,10 +124,27 @@ Machine Learning Dashboard
 
 </div>
 
+<div class="card">
+
+<h2>Select Model</h2>
+
+<div style="margin-top:20px;">
+
+    <!-- Linear Regression -->
+    <a href="/linear-regression">
+        <button class="btn linear">Linear Regression</button>
+    </a>
+
+    <!-- Logistic Regression -->
+    <a href="/predict-logistic">
+        <button class="btn logistic">Logistic Regression</button>
+    </a>
+
+</div>
+
+</div>
+
 </div>
 
 </body>
 </html>
-<a href="/predict">
-<button>Go to Grade Predictor</button>
-</a>
