@@ -49,14 +49,21 @@ body{
     font-weight:bold;
 }
 
+.menu{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
 .btn{
-    padding:12px 25px;
-    font-size:16px;
+    padding:12px;
+    font-size:14px;
     border:none;
     border-radius:8px;
     cursor:pointer;
-    margin-right:10px;
     transition:0.3s;
+    width:100%;
 }
 
 .linear{
@@ -68,13 +75,58 @@ body{
     background:#1e8449;
 }
 
-.logistic{
+.predict{
     background:#2980b9;
     color:white;
 }
 
-.logistic:hover{
+.predict:hover{
     background:#1f618d;
+}
+
+.usecase{
+    background:#8e44ad;
+    color:white;
+}
+
+.usecase:hover{
+    background:#6c3483;
+}
+
+.case{
+    background:#9b59b6;
+    color:white;
+}
+
+.case:hover{
+    background:#7d3c98;
+}
+
+.supervised{
+    background:#16a085;
+    color:white;
+}
+
+.supervised:hover{
+    background:#117864;
+}
+
+.basic{
+    background:#f39c12;
+    color:white;
+}
+
+.basic:hover{
+    background:#d68910;
+}
+
+.app{
+    background:#34495e;
+    color:white;
+}
+
+.app:hover{
+    background:#2c3e50;
 }
 
 </style>
@@ -89,10 +141,9 @@ Machine Learning Dashboard
 
 <div class="container">
 
-
 <div class="card">
 <h2>Welcome to your dashboard</h2>
-<p>This system demonstrates a Machine Learning prediction using Linear and Logistic Regression.</p>
+<p>This system demonstrates Machine Learning use cases.</p>
 </div>
 
 <div class="card">
@@ -104,7 +155,6 @@ Machine Learning Dashboard
 </div>
 </div>
 
-<!-- Stats -->
 <div class="grid">
 
 <div class="card">
@@ -126,19 +176,31 @@ Machine Learning Dashboard
 
 <div class="card">
 
-<h2>Select Model</h2>
+<h2>Main Menu</h2>
 
-<div style="margin-top:20px;">
+<div class="menu">
 
-    <!-- Linear Regression -->
-    <a href="/linear-regression">
-        <button class="btn linear">Linear Regression</button>
-    </a>
+<a href="/ml-use-cases"><button class="btn usecase">ML Use Cases</button></a>
 
-    <!-- Logistic Regression -->
-    <a href="/predict-logistic">
-        <button class="btn logistic">Logistic Regression</button>
-    </a>
+<a href="/use-case-1"><button class="btn case">Use Case 1</button></a>
+
+<a href="/use-case-2"><button class="btn case">Use Case 2</button></a>
+
+<a href="/use-case-3"><button class="btn case">Use Case 3</button></a>
+
+<a href="/use-case-4"><button class="btn case">Use Case 4</button></a>
+
+<a href="/supervised-ml"><button class="btn supervised">Supervised ML</button></a>
+
+<a href="/linear-regression"><button class="btn linear">Linear Regression</button></a>
+
+<a href="/basic-concepts"><button class="btn basic">Basic Concepts</button></a>
+
+<a href="/application"><button class="btn app">Application</button></a>
+
+<a href="/linear-exercise"><button class="btn linear">Linear Regression Exercise</button></a>
+
+<a href="/predict-exercise"><button class="btn predict">Predict Exercise</button></a>
 
 </div>
 

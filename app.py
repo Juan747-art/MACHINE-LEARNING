@@ -8,21 +8,15 @@ app = Flask(__name__)
 USERNAME = "admin"
 PASSWORD = "1234"
 
-
 logistic_model = LogisticRegressionModel("datos.csv")
 logistic_model.load_model("logistic_model.pkl")
-
-
 
 @app.route('/')
 def login_page():
     return render_template("login.html")
 
-
-
 @app.route('/login', methods=['POST'])
 def login():
-
     username = request.form['username']
     password = request.form['password']
 
@@ -31,11 +25,17 @@ def login():
     else:
         return "Invalid username or password"
 
+@app.route('/dashboard')
+def dashboard():
+    prediction = random.randint(60, 95)
+    return render_template("dashboard.html", prediction=prediction)
 
+@app.route('/use-cases')
+def use_cases():
+    return render_template('use_cases.html')
 
-@app.route('/linear-regression', methods=["GET", "POST"])
-def calculate_grade():
-
+@app.route('/linear-exercise', methods=["GET", "POST"])
+def linear_exercise():
     result = None
 
     if request.method == "POST":
@@ -44,11 +44,8 @@ def calculate_grade():
 
     return render_template("LinearRegressionGrade.html", result=result)
 
-
-
-@app.route('/predict', methods=["GET", "POST"])
-def predict():
-
+@app.route('/predict-exercise', methods=["GET", "POST"])
+def predict_exercise():
     result = None
 
     if request.method == "POST":
@@ -57,11 +54,8 @@ def predict():
 
     return render_template("predict.html", result=result)
 
-
-
 @app.route('/predict-logistic', methods=['GET', 'POST'])
 def predict_logistic():
-
     result = None
     probability = None
 
@@ -75,7 +69,6 @@ def predict_logistic():
 
         data = [[age, income, visits, time, purchases, discount]]
 
-        
         prediction = logistic_model.predict(data)
         prob = logistic_model.predict_probability(data)
 
@@ -87,16 +80,6 @@ def predict_logistic():
         result=result,
         probability=probability
     )
-
-
-
-@app.route('/dashboard')
-def dashboard():
-
-    prediction = random.randint(60, 95)
-
-    return render_template("dashboard.html", prediction=prediction)
-
 
 if __name__ == "__main__":
     app.run(debug=True)
