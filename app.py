@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import random
 import LinearRegression
 from LogisticRegressionModel import LogisticRegressionModel
+import LinearModel
 
 app = Flask(__name__)
 
@@ -24,6 +25,18 @@ def login():
         return redirect(url_for('dashboard'))
     else:
         return "Invalid username or password"
+@app.route('/application', methods=["GET", "POST"])
+def application():
+    result = None
+
+    if request.method == "POST":
+        day = float(request.form["day"])
+        result = LinearModel.predict_price(day)
+
+    return render_template("application.html", result=result)
+@app.route('/linear-regression')
+def linear_regression():
+    return render_template("linear_regression.html")
 
 @app.route('/dashboard')
 def dashboard():

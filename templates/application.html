@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prediction</title>
+</head>
+<body>
+
+<h1>Stock Price Prediction</h1>
+
+<form method="POST">
+<input type="number" name="day" placeholder="Enter day number" required>
+<button type="submit">Predict</button>
+</form>
+
+{% if result %}
+<h2>Predicted Price: {{result}}</h2>
+{% endif %}
+
+<a href="/linear-regression">Back</a>
+
+</body>
+</html>
