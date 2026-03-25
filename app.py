@@ -63,6 +63,9 @@ def use_case_3():
 @app.route('/use-case-4')
 def use_case_4():
     return render_template('use_case_4.html')
+@app.route('/linear-concepts')
+def linear_concepts():
+    return render_template('linear_concepts.html')
 
 @app.route('/linear-exercise', methods=["GET", "POST"])
 def linear_exercise():
