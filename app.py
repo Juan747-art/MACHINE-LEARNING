@@ -30,9 +30,25 @@ def dashboard():
     prediction = random.randint(60, 95)
     return render_template("dashboard.html", prediction=prediction)
 
-@app.route('/use-cases')
-def use_cases():
+@app.route('/ml-use-cases')
+def ml_use_cases():
     return render_template('use_cases.html')
+
+@app.route('/use-case-1')
+def use_case_1():
+    return render_template('use_case_1.html')
+
+@app.route('/use-case-2')
+def use_case_2():
+    return render_template('use_case_2.html')
+
+@app.route('/use-case-3')
+def use_case_3():
+    return render_template('use_case_3.html')
+
+@app.route('/use-case-4')
+def use_case_4():
+    return render_template('use_case_4.html')
 
 @app.route('/linear-exercise', methods=["GET", "POST"])
 def linear_exercise():
