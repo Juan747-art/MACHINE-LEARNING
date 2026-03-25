@@ -67,15 +67,7 @@ def use_case_4():
 def linear_concepts():
     return render_template('linear_concepts.html')
 
-@app.route('/linear-exercise', methods=["GET", "POST"])
-def linear_exercise():
-    result = None
 
-    if request.method == "POST":
-        hours = float(request.form["hours"])
-        result = LinearRegression.calculateGrade(hours)
-
-    return render_template("LinearRegressionGrade.html", result=result)
 
 @app.route('/predict-exercise', methods=["GET", "POST"])
 def predict_exercise():
