@@ -36,6 +36,7 @@ def application():
     return render_template("application.html", result=result)
 @app.route('/linear-regression')
 def linear_regression():
+    LinearModel.generate_graph()
     return render_template("linear_regression.html")
 
 @app.route('/dashboard')
