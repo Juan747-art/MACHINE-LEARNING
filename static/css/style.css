@@ -1,0 +1,79 @@
+/* Fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #0f172a, #1e293b);
+    color: white;
+}
+
+/* Barra superior */
+.navbar {
+    background: #020617;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: #38bdf8;
+}
+
+/* Contenedor principal */
+.container {
+    width: 85%;
+    margin: 40px auto;
+}
+
+/* Tarjetas */
+.card {
+    background: #020617;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+}
+
+/* Botones */
+.btn {
+    background: #38bdf8;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #0ea5e9;
+}
+
+/* Inputs */
+input, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Títulos */
+h2 {
+    margin-bottom: 20px;
+}
