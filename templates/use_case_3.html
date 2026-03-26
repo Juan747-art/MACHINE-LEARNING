@@ -1,29 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Use Case 3</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h1>Fraud Detection</h1>
+{% block title %}Use Case 3{% endblock %}
 
-<h2>Problem Description</h2>
-<p>Banks need to detect fraud transactions.</p>
+{% block content %}
 
-<h2>Type of Machine Learning</h2>
-<p>Supervised Learning (Classification)</p>
+<div class="card">
+    <h2>Fraud Detection</h2>
+    <p>
+        This use case shows how machine learning can be used to detect fraudulent
+        financial transactions based on transaction data.
+    </p>
+</div>
 
-<h2>Input Data</h2>
-<p>Transaction amount, time, location</p>
+<div class="card">
+    <h2>Problem Description</h2>
+    <p>
+        Banks and financial institutions need to identify fraudulent transactions
+        quickly in order to protect customers and reduce financial losses.
+    </p>
+</div>
 
-<h2>Expected Output</h2>
-<p>Fraud or Not Fraud</p>
+<div class="card">
+    <h2>Type of Machine Learning</h2>
+    <p><strong>Supervised Learning (Classification)</strong></p>
+</div>
 
-<h2>Real-World Relevance</h2>
-<p>Used by Visa to prevent fraud.</p>
+<div class="card">
+    <h2>Input Data</h2>
+    <p>Transaction Amount</p>
+    <p>Transaction Time</p>
+    <p>Transaction Location</p>
+</div>
 
-<a href="/ml-use-cases">Back</a>
+<div class="card">
+    <h2>Expected Output</h2>
+    <p>
+        The model predicts whether a transaction is fraudulent or not.
+    </p>
+</div>
 
-</body>
-</html>
+<div class="card">
+    <h2>Real-World Relevance</h2>
+    <p>
+        This type of machine learning system is used by companies like Visa
+        to prevent fraud and protect users.
+    </p>
+</div>
+
+<div class="card">
+    <a href="/ml-use-cases">
+        <button class="btn">Back to Use Cases</button>
+    </a>
+</div>
+
+{% endblock %}

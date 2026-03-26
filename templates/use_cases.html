@@ -1,21 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>ML Use Cases</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h1>Machine Learning Use Cases</h1>
+{% block title %}Machine Learning Use Cases{% endblock %}
 
-<ul>
-<li><a href="/use-case-1">Use Case 1</a></li>
-<li><a href="/use-case-2">Use Case 2</a></li>
-<li><a href="/use-case-3">Use Case 3</a></li>
-<li><a href="/use-case-4">Use Case 4</a></li>
-</ul>
+{% block content %}
 
-<a href="/dashboard">Back</a>
+<div class="card">
+    <h2>Machine Learning Use Cases</h2>
+    <p>
+        This section presents different real-world applications where machine learning
+        can be used to solve problems and make predictions.
+    </p>
+</div>
 
-</body>
-</html>
+<div class="card">
+    <h2>Available Use Cases</h2>
+
+    <ul style="list-style:none; padding:0;">
+        <li style="margin-bottom:15px;">
+            <a href="/use-case-1">
+                <button class="btn">Use Case 1</button>
+            </a>
+        </li>
+
+        <li style="margin-bottom:15px;">
+            <a href="/use-case-2">
+                <button class="btn">Use Case 2</button>
+            </a>
+        </li>
+
+        <li style="margin-bottom:15px;">
+            <a href="/use-case-3">
+                <button class="btn">Use Case 3</button>
+            </a>
+        </li>
+
+        <li>
+            <a href="/use-case-4">
+                <button class="btn">Use Case 4</button>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="card">
+    <a href="/dashboard">
+        <button class="btn">Back to Dashboard</button>
+    </a>
+</div>
+
+{% endblock %}

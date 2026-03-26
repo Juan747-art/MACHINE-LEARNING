@@ -1,29 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Use Case 4</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h1>Recommendation System</h1>
+{% block title %}Use Case 4{% endblock %}
 
-<h2>Problem Description</h2>
-<p>Platforms recommend content to users.</p>
+{% block content %}
 
-<h2>Type of Machine Learning</h2>
-<p>Supervised Learning</p>
+<div class="card">
+    <h2>Recommendation System</h2>
+    <p>
+        This use case shows how machine learning can be used to recommend content
+        to users based on their behavior and preferences.
+    </p>
+</div>
 
-<h2>Input Data</h2>
-<p>User history, preferences</p>
+<div class="card">
+    <h2>Problem Description</h2>
+    <p>
+        Digital platforms need to recommend relevant content in order to improve
+        user experience and increase engagement.
+    </p>
+</div>
 
-<h2>Expected Output</h2>
-<p>Recommended content</p>
+<div class="card">
+    <h2>Type of Machine Learning</h2>
+    <p><strong>Supervised Learning</strong></p>
+</div>
 
-<h2>Real-World Relevance</h2>
-<p>Used by Netflix to increase engagement.</p>
+<div class="card">
+    <h2>Input Data</h2>
+    <p>User History</p>
+    <p>User Preferences</p>
+    <p>Previously Watched or Viewed Content</p>
+</div>
 
-<a href="/ml-use-cases">Back</a>
+<div class="card">
+    <h2>Expected Output</h2>
+    <p>
+        The system predicts and recommends the most relevant content for the user.
+    </p>
+</div>
 
-</body>
-</html>
+<div class="card">
+    <h2>Real-World Relevance</h2>
+    <p>
+        This type of machine learning system is used by platforms like Netflix
+        to increase user engagement and improve recommendations.
+    </p>
+</div>
+
+<div class="card">
+    <a href="/ml-use-cases">
+        <button class="btn">Back to Use Cases</button>
+    </a>
+</div>
+
+{% endblock %}

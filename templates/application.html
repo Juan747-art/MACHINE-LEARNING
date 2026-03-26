@@ -1,23 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Prediction</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h1>Stock Price Prediction</h1>
+{% block title %}Stock Price Prediction{% endblock %}
 
-<form method="POST">
-<input type="number" name="day" placeholder="Enter day number" required>
-<button type="submit">Predict</button>
-</form>
+{% block content %}
+
+<div class="card">
+    <h2>Stock Price Prediction</h2>
+    <p>
+        This page allows you to predict the stock price using the trained linear regression model.
+        Enter the day number and press the predict button.
+    </p>
+</div>
+
+<div class="card">
+    <form method="POST">
+
+        <label>Day Number</label>
+        <input type="number" name="day" placeholder="Enter day number" required>
+
+        <button class="btn">Predict Price</button>
+
+    </form>
+</div>
 
 {% if result %}
-<h2>Predicted Price: {{result}}</h2>
+<div class="card">
+    <h2>Prediction Result</h2>
+    <h3>Predicted Price: {{ result }}</h3>
+</div>
 {% endif %}
 
-<a href="/linear-regression">Back</a>
+<div class="card">
+    <a href="/linear-regression">
+        <button class="btn">Back to Linear Regression</button>
+    </a>
+</div>
 
-</body>
-</html>
+{% endblock %}

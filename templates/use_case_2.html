@@ -1,29 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Use Case 2</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h1>Student Performance Prediction</h1>
+{% block title %}Use Case 2{% endblock %}
 
-<h2>Problem Description</h2>
-<p>Schools want to predict student grades.</p>
+{% block content %}
 
-<h2>Type of Machine Learning</h2>
-<p>Supervised Learning (Regression)</p>
+<div class="card">
+    <h2>Student Performance Prediction</h2>
+    <p>
+        This use case shows how machine learning can be used to predict student performance
+        based on academic and behavioral data.
+    </p>
+</div>
 
-<h2>Input Data</h2>
-<p>Study hours, attendance, previous grades</p>
+<div class="card">
+    <h2>Problem Description</h2>
+    <p>
+        Educational institutions want to predict student grades in order to improve learning
+        strategies and support students who may be at risk.
+    </p>
+</div>
 
-<h2>Expected Output</h2>
-<p>Final grade prediction</p>
+<div class="card">
+    <h2>Type of Machine Learning</h2>
+    <p><strong>Supervised Learning (Regression)</strong></p>
+</div>
 
-<h2>Real-World Relevance</h2>
-<p>Used to identify students at risk.</p>
+<div class="card">
+    <h2>Input Data</h2>
+    <p>Study Hours</p>
+    <p>Attendance</p>
+    <p>Previous Grades</p>
+</div>
 
-<a href="/ml-use-cases">Back</a>
+<div class="card">
+    <h2>Expected Output</h2>
+    <p>
+        The model predicts the final grade of a student based on the input data.
+    </p>
+</div>
 
-</body>
-</html>
+<div class="card">
+    <h2>Real-World Relevance</h2>
+    <p>
+        This type of model is used to identify students at risk and improve academic performance.
+    </p>
+</div>
+
+<div class="card">
+    <a href="/ml-use-cases">
+        <button class="btn">Back to Use Cases</button>
+    </a>
+</div>
+
+{% endblock %}

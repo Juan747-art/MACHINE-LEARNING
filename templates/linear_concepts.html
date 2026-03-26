@@ -1,27 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Linear Regression Concepts</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h1>Linear Regression Concepts</h1>
+{% block title %}Linear Regression Concepts{% endblock %}
 
-<h2>Definition</h2>
-<p>Linear regression is a supervised machine learning algorithm used to predict a continuous value based on the relationship between variables.</p>
+{% block content %}
 
-<h2>Variables</h2>
-<p>Independent variable (X): Time (days in the dataset)</p>
-<p>Dependent variable (Y): NVIDIA stock closing price</p>
+<div class="card">
+    <h2>Linear Regression Concepts</h2>
+    <p>
+        Linear regression is a supervised machine learning algorithm used to predict a continuous value
+        based on the relationship between variables.
+    </p>
+</div>
 
-<h2>Explanation with Example</h2>
-<p>In this project, linear regression is used to predict the stock price of NVIDIA based on time.</p>
-<p>The dataset contains historical stock data, and each row represents a specific day.</p>
-<p>The model learns the relationship between time and stock price and uses a linear equation to predict future values.</p>
-<p>For example, if we input a specific day number, the model predicts the expected stock price for that day.</p>
+<div class="card">
+    <h2>Definition</h2>
+    <p>
+        Linear regression is used when the objective is to predict a numerical value.
+        The model learns how one variable affects another using historical data.
+    </p>
+</div>
 
-<a href="/application">Go to Application</a>
+<div class="card">
+    <h2>Variables in This Project</h2>
+    <p><strong>Independent Variable (X):</strong> Time represented as days in the dataset.</p>
+    <p><strong>Dependent Variable (Y):</strong> NVIDIA stock closing price.</p>
+</div>
 
-</body>
-</html>
+<div class="card">
+    <h2>Explanation with an Example</h2>
+    <p>
+        In this project, linear regression is used to predict the stock price of NVIDIA based on time.
+        The dataset contains historical stock data, where each row represents a specific day.
+    </p>
+    <p>
+        The model learns the relationship between time and stock price and then creates a linear equation
+        that can be used to predict future values.
+    </p>
+    <p>
+        For example, when a day number is entered, the system predicts the expected stock price for that day
+        using the trained model.
+    </p>
+</div>
+
+<div class="card">
+    <a href="/application">
+        <button class="btn">Go to Application</button>
+    </a>
+</div>
+
+{% endblock %}

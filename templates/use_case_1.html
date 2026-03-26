@@ -1,29 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Use Case 1</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h1>Customer Purchase Prediction</h1>
+{% block title %}Use Case 1{% endblock %}
 
-<h2>Problem Description</h2>
-<p>Companies want to predict if a customer will buy a product.</p>
+{% block content %}
 
-<h2>Type of Machine Learning</h2>
-<p>Supervised Learning (Classification)</p>
+<div class="card">
+    <h2>Customer Purchase Prediction</h2>
+    <p>
+        This use case shows how machine learning can be used to predict whether a customer
+        will buy a product based on their behavior and personal data.
+    </p>
+</div>
 
-<h2>Input Data</h2>
-<p>Age, income, visits, time on site, purchases</p>
+<div class="card">
+    <h2>Problem Description</h2>
+    <p>
+        Many companies want to predict if a customer will buy a product in order to improve
+        marketing strategies and increase sales.
+    </p>
+</div>
 
-<h2>Expected Output</h2>
-<p>Yes or No prediction</p>
+<div class="card">
+    <h2>Type of Machine Learning</h2>
+    <p><strong>Supervised Learning (Classification)</strong></p>
+</div>
 
-<h2>Real-World Relevance</h2>
-<p>Used by Amazon to improve sales.</p>
+<div class="card">
+    <h2>Input Data</h2>
+    <p>Age</p>
+    <p>Income</p>
+    <p>Number of Visits</p>
+    <p>Time Spent on the Website</p>
+    <p>Previous Purchases</p>
+</div>
 
-<a href="/ml-use-cases">Back</a>
+<div class="card">
+    <h2>Expected Output</h2>
+    <p>
+        The model predicts whether the customer will buy the product or not
+        using a Yes or No classification.
+    </p>
+</div>
 
-</body>
-</html>
+<div class="card">
+    <h2>Real-World Relevance</h2>
+    <p>
+        This type of machine learning model is used by companies like Amazon
+        to improve product recommendations and increase sales.
+    </p>
+</div>
+
+<div class="card">
+    <a href="/ml-use-cases">
+        <button class="btn">Back to Use Cases</button>
+    </a>
+</div>
+
+{% endblock %}

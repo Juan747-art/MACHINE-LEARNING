@@ -1,30 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Linear Regression</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h1>Linear Regression Application</h1>
+{% block title %}Linear Regression{% endblock %}
 
-<h2>Problem Description</h2>
-<p>The goal is to predict NVIDIA stock closing price based on historical data.</p>
+{% block content %}
 
-<h2>Dataset Explanation</h2>
-<p>The dataset contains NVIDIA stock prices from 1999 to 2026.</p>
+<div class="card">
+    <h2>Linear Regression Application</h2>
+    <p>
+        This section presents the implementation of a linear regression model used to predict
+        the NVIDIA stock closing price based on historical data.
+    </p>
+</div>
 
-<h2>Variables Used</h2>
-<p>Input: Time</p>
-<p>Output: Closing price</p>
+<div class="card">
+    <h2>Problem Description</h2>
+    <p>
+        The objective of this project is to predict the NVIDIA stock closing price using
+        a linear regression model trained with historical stock data.
+    </p>
+</div>
 
-<h2>Regression Graph</h2>
+<div class="card">
+    <h2>Dataset Explanation</h2>
+    <p>
+        The dataset contains historical NVIDIA stock prices from 1999 to 2026.
+        Each row represents a specific day in the dataset.
+    </p>
+</div>
 
-<img src="{{ url_for('static', filename='images/graph.png') }}" width="600">
+<div class="card">
+    <h2>Variables Used</h2>
+    <p><strong>Input Variable:</strong> Time</p>
+    <p><strong>Output Variable:</strong> Closing Price</p>
+</div>
 
-<br><br>
+<div class="card">
+    <h2>Regression Graph</h2>
 
-<a href="/application">Go to Prediction</a>
+    <img src="{{ url_for('static', filename='images/graph.png') }}" style="width:100%; border-radius:10px; margin-top:15px;">
+</div>
 
-</body>
-</html>
+<div class="card">
+    <a href="/application">
+        <button class="btn">Go to Prediction</button>
+    </a>
+</div>
+
+{% endblock %}
