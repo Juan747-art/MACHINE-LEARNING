@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+<h1>Classification Model – Basic Concepts (Decision Tree)</h1>
+
+<div class="card">
+<h2>What the model is</h2>
+<p>A Decision Tree is a supervised machine learning algorithm used for classification problems. It predicts a class by splitting the data into smaller and smaller groups based on feature values.</p>
+</div>
+
+<div class="card">
+<h2>How it works in general terms</h2>
+<p>The model works by creating a tree structure. Each node represents a decision based on a feature, each branch represents the result of that decision, and each leaf node represents the final predicted class.</p>
+</div>
+
+<div class="card">
+<h2>Main characteristics</h2>
+<p>Decision Trees are easy to understand, work well with numerical and categorical data, and do not require data normalization. The model learns rules directly from the data.</p>
+</div>
+
+<div class="card">
+<h2>Advantages and limitations</h2>
+<p>Decision Trees are simple, fast, and easy to visualize. However, they can overfit the data if the tree becomes too large and may not perform well with very complex datasets.</p>
+</div>
+
+<div class="card">
+<h2>Type of classification problems where it can be applied</h2>
+<p>This model can be applied to binary classification problems and multi-class classification problems such as spam detection, customer segmentation, and medical diagnosis.</p>
+</div>
+
+<div class="card">
+<h2>Real-world use example</h2>
+<p>A real-world example is predicting whether a customer will buy a product based on age, income, and previous purchases. The model learns decision rules such as: if income is high and age is between 25 and 40, the probability of buying is higher.</p>
+</div>
+
+</div>
+
+{% endblock %}
