@@ -36,17 +36,23 @@
 
 <form action="/predict_logistic" method="POST">
 
-<label>Study Hours</label>
+<label>Study Hours per Day</label>
 <input type="number" step="0.1" name="study_hours" required>
-
-<label>Screen Time</label>
-<input type="number" step="0.1" name="screen_time" required>
 
 <label>Sleep Hours</label>
 <input type="number" step="0.1" name="sleep_hours" required>
 
-<label>Social Media Usage</label>
+<label>Phone Usage Hours</label>
+<input type="number" step="0.1" name="phone_usage" required>
+
+<label>Social Media Hours</label>
 <input type="number" step="0.1" name="social_media" required>
+
+<label>Focus Score</label>
+<input type="number" step="0.1" name="focus_score" required>
+
+<label>Attendance Percentage</label>
+<input type="number" step="0.1" name="attendance" required>
 
 <button type="submit" class="btn">Predict Productivity</button>
 

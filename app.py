@@ -9,7 +9,7 @@ app = Flask(__name__)
 USERNAME = "admin"
 PASSWORD = "1234"
 
-logistic_model = LogisticRegressionModel("datos.csv")
+logistic_model = LogisticRegressionModel()
 logistic_model.load_model("logistic_model.pkl")
 
 @app.route('/')
@@ -75,21 +75,24 @@ import numpy as np
 
 model = pickle.load(open("logistic_model.pkl","rb"))
 
-@app.route("/predict_logistic",methods=["POST"])
+@app.route("/predict_logistic", methods=["POST"])
 def predict_logistic():
+
     study = float(request.form["study_hours"])
-    screen = float(request.form["screen_time"])
     sleep = float(request.form["sleep_hours"])
+    phone = float(request.form["phone_usage"])
     social = float(request.form["social_media"])
+    focus = float(request.form["focus_score"])
+    attendance = float(request.form["attendance"])
 
-    prediction = model.predict([[study,screen,sleep,social]])
+    prediction, probability = logistic_model.predict_productivity(study, sleep, phone, social, focus, attendance)
 
-    if prediction[0] == 1:
+    if prediction == 1:
         result = "Productive student"
     else:
         result = "Low productivity student"
 
-    return render_template("logistic_application.html",prediction=result)
+    return render_template("logistic_application.html", prediction=result, probability=round(probability,2))
 
 
 
