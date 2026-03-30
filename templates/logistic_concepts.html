@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+<h1>Logistic Regression – Basic Concepts</h1>
+
+<div class="card">
+<h2>What logistic regression is</h2>
+<p>Logistic regression is a supervised machine learning algorithm used for classification problems. It predicts the probability that an input belongs to a specific class.</p>
+</div>
+
+<div class="card">
+<h2>Difference between regression and classification</h2>
+<p>Regression predicts continuous numerical values, while classification predicts categories or classes such as yes or no, true or false, 0 or 1.</p>
+</div>
+
+<div class="card">
+<h2>Binary classification</h2>
+<p>Binary classification means the model predicts one of two possible classes. For example: spam or not spam, pass or fail, fraud or not fraud.</p>
+</div>
+
+<div class="card">
+<h2>Target variable / class label</h2>
+<p>The target variable is the value the model is trying to predict. In logistic regression this value represents the class label, usually 0 or 1.</p>
+</div>
+
+<div class="card">
+<h2>Features / predictors</h2>
+<p>Features are the input variables used to make predictions. These can be numerical values such as age, salary, or number of purchases.</p>
+</div>
+
+<div class="card">
+<h2>Probability estimation</h2>
+<p>Logistic regression does not predict a number directly. Instead, it predicts a probability between 0 and 1 that the input belongs to a class.</p>
+</div>
+
+<div class="card">
+<h2>Decision boundary</h2>
+<p>The decision boundary is the point where the model separates one class from another. It is usually based on a probability value.</p>
+</div>
+
+<div class="card">
+<h2>Classification threshold</h2>
+<p>The classification threshold is the value used to decide the class. If the probability is greater than the threshold, the model predicts class 1. If it is lower, it predicts class 0.</p>
+</div>
+
+<div class="card">
+<h2>Real-world use example</h2>
+<p>Logistic regression is used in fraud detection, medical diagnosis, spam filtering, and predicting whether a customer will buy a product or not.</p>
+</div>
+
+</div>
+
+{% endblock %}

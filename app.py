@@ -78,6 +78,9 @@ def predict_exercise():
         result = LinearRegression.calculateGrade(hours)
 
     return render_template("predict.html", result=result)
+@app.route("/logistic_concepts")
+def logistic_concepts():
+    return render_template("logistic_concepts.html")
 
 @app.route('/predict-logistic', methods=['GET', 'POST'])
 def predict_logistic():
