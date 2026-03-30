@@ -67,6 +67,30 @@ def use_case_4():
 def linear_concepts():
     return render_template('linear_concepts.html')
 
+@app.route("/logistic_application")
+def logistic_application():
+    return render_template("logistic_application.html")
+import pickle
+import numpy as np
+
+model = pickle.load(open("logistic_model.pkl","rb"))
+
+@app.route("/predict_logistic",methods=["POST"])
+def predict_logistic():
+    study = float(request.form["study_hours"])
+    screen = float(request.form["screen_time"])
+    sleep = float(request.form["sleep_hours"])
+    social = float(request.form["social_media"])
+
+    prediction = model.predict([[study,screen,sleep,social]])
+
+    if prediction[0] == 1:
+        result = "Productive student"
+    else:
+        result = "Low productivity student"
+
+    return render_template("logistic_application.html",prediction=result)
+
 
 
 @app.route('/predict-exercise', methods=["GET", "POST"])
@@ -87,26 +111,7 @@ def logistic_concepts():
 def classification_model_concepts():
     return render_template("classification_model_concepts.html")
 
-@app.route('/predict-logistic', methods=['GET', 'POST'])
-def predict_logistic():
-    result = None
-    probability = None
 
-    if request.method == "POST":
-        age = float(request.form['edad'])
-        income = float(request.form['ingreso'])
-        visits = float(request.form['visitas'])
-        time = float(request.form['tiempo'])
-        purchases = float(request.form['compras'])
-        discount = float(request.form['descuento'])
-
-        data = [[age, income, visits, time, purchases, discount]]
-
-        prediction = logistic_model.predict(data)
-        prob = logistic_model.predict_probability(data)
-
-        result = "Will Buy" if prediction == 1 else "Will Not Buy"
-        probability = f"{prob*100:.2f}%"
 
     return render_template(
         'predict_logistic.html',

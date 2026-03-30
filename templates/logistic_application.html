@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+<h1>Logistic Regression – Application</h1>
+
+<div class="card">
+<h2>Problem description</h2>
+<p>The goal of this project is to predict whether a student is productive or not based on study habits, screen time, and lifestyle variables using a Logistic Regression model.</p>
+</div>
+
+<div class="card">
+<h2>Dataset explanation</h2>
+<p>The dataset used is the Student Productivity & Digital Distraction Dataset from Kaggle. It contains 20,000 student records that relate study time, digital distraction, sleep habits, and lifestyle factors with productivity.</p>
+</div>
+
+<div class="card">
+<h2>Input variables and target variable</h2>
+<p>The input variables include study hours, screen time, sleep hours, social media usage, and other lifestyle variables. The target variable represents whether the student is productive or not.</p>
+</div>
+
+<div class="card">
+<h2>Data preparation</h2>
+<p>The dataset was cleaned by removing missing values and selecting only the most relevant features. The target variable was converted into binary values (0 and 1).</p>
+</div>
+
+<div class="card">
+<h2>Model training process</h2>
+<p>The Logistic Regression model was trained using the scikit-learn library. The dataset was split into training data and testing data to evaluate the model performance.</p>
+</div>
+
+<div class="card">
+<h2>Prediction form</h2>
+
+<form action="/predict_logistic" method="POST">
+
+<label>Study Hours</label>
+<input type="number" step="0.1" name="study_hours" required>
+
+<label>Screen Time</label>
+<input type="number" step="0.1" name="screen_time" required>
+
+<label>Sleep Hours</label>
+<input type="number" step="0.1" name="sleep_hours" required>
+
+<label>Social Media Usage</label>
+<input type="number" step="0.1" name="social_media" required>
+
+<button type="submit" class="btn">Predict Productivity</button>
+
+</form>
+
+</div>
+
+{% if prediction %}
+
+<div class="card">
+<h2>Prediction Result</h2>
+<p>{{ prediction }}</p>
+</div>
+
+{% endif %}
+
+<div class="card">
+<h2>Confusion matrix</h2>
+<img src="{{ url_for('static', filename='images/confusion_matrix.png') }}" width="500">
+</div>
+
+<div class="card">
+<h2>Accuracy, Precision, Recall and F1-score</h2>
+<p>{{ metrics }}</p>
+</div>
+
+<div class="card">
+<h2>ROC Curve / AUC</h2>
+<img src="{{ url_for('static', filename='images/roc_curve.png') }}" width="500">
+</div>
+
+<div class="card">
+<h2>Interpretation of results</h2>
+<p>The model is capable of predicting student productivity with good accuracy. Study hours and screen time are the most important variables affecting the prediction.</p>
+</div>
+
+</div>
+
+{% endblock %}
