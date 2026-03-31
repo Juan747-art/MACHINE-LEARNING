@@ -3,6 +3,7 @@ import random
 import LinearRegression
 from LogisticRegressionModel import LogisticRegressionModel
 import LinearModel
+from DecisionTreeModel import DecisionTreeModel
 
 app = Flask(__name__)
 
@@ -11,6 +12,26 @@ PASSWORD = "1234"
 
 logistic_model = LogisticRegressionModel()
 logistic_model.load_model("logistic_model.pkl")
+decision_model = DecisionTreeModel()
+decision_model.load_model("decision_tree_model.pkl")
+
+@app.route("/decision_tree_application")
+def decision_tree_application():
+    return render_template("decision_tree_application.html")
+
+@app.route("/predict_decision_tree", methods=["POST"])
+def predict_decision_tree():
+
+    study = float(request.form["study_hours"])
+    sleep = float(request.form["sleep_hours"])
+    phone = float(request.form["phone_usage"])
+    social = float(request.form["social_media"])
+    focus = float(request.form["focus_score"])
+    attendance = float(request.form["attendance"])
+
+    result = decision_model.predict_productivity(study, sleep, phone, social, focus, attendance)
+
+    return render_template("decision_tree_application.html", prediction=result)
 
 @app.route('/')
 def login_page():
