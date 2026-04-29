@@ -4,7 +4,6 @@ import LinearRegression
 from LogisticRegressionModel import LogisticRegressionModel
 import LinearModel
 from DecisionTreeModel import DecisionTreeModel
-import clustering
 
 app = Flask(__name__)
 
@@ -132,13 +131,14 @@ def predict_exercise():
 def logistic_concepts():
     return render_template("logistic_concepts.html")
 
-@app.route("/unsupervised")
+@app.route('/unsupervised')
 def unsupervised():
-    return render_template("unsupervised.html")
+    return render_template('unsupervised.html')
 
-@app.route("/unsupervised/concepts")
-def unsupervised_concepts():
-    return render_template("unsupervised_concepts.html")
+@app.route('/kmeans_concepts')
+def kmeans_concepts():
+    return render_template('kmeans_concepts.html')
+
 
 @app.route("/classification_model_concepts")
 def classification_model_concepts():
