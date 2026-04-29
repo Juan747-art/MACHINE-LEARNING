@@ -177,6 +177,10 @@ def unsupervised():
 def kmeans_concepts():
     return render_template('kmeans_concepts.html')
 
+@app.route('/kmeans_manual')
+def kmeans_manual():
+    return render_template('kmeans_manual.html')
+
 @app.route("/classification_model_concepts")
 def classification_model_concepts():
     return render_template("classification_model_concepts.html")
