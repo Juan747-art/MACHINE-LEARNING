@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>K-Means Manual Exercise</h1>
+
+<h2>Dataset Explanation</h2>
+<p>
+This dataset represents student behavior using two features: study hours per day and sleep hours.
+A total of 100 records were used, but only a subset is shown for manual calculation.
+</p>
+
+<h2>Initial Centroids</h2>
+<ul>
+    <li>C1 = (2, 5)</li>
+    <li>C2 = (6, 7)</li>
+    <li>C3 = (9, 9)</li>
+</ul>
+
+<h2>Distance Formula</h2>
+<p>d = √((x2 - x1)² + (y2 - y1)²)</p>
+
+<h2>Iteration 1</h2>
+
+<table border="1">
+<tr>
+    <th>ID</th>
+    <th>Study</th>
+    <th>Sleep</th>
+    <th>d(C1)</th>
+    <th>d(C2)</th>
+    <th>d(C3)</th>
+    <th>Cluster</th>
+</tr>
+
+<tr><td>1</td><td>4.35</td><td>3.63</td><td>2.70</td><td>3.68</td><td>7.20</td><td>C1</td></tr>
+<tr><td>2</td><td>6.14</td><td>6.58</td><td>4.29</td><td>0.45</td><td>3.78</td><td>C2</td></tr>
+<tr><td>3</td><td>4.98</td><td>3.26</td><td>3.44</td><td>3.99</td><td>7.26</td><td>C1</td></tr>
+<tr><td>4</td><td>3.19</td><td>4.58</td><td>1.27</td><td>3.76</td><td>7.20</td><td>C1</td></tr>
+<tr><td>5</td><td>7.67</td><td>6.21</td><td>5.84</td><td>1.83</td><td>2.96</td><td>C2</td></tr>
+
+</table>
+
+<h2>New Centroids (Iteration 1)</h2>
+<ul>
+    <li>C1 = (4.17, 3.82)</li>
+    <li>C2 = (6.90, 6.39)</li>
+    <li>C3 = (9, 9)</li>
+</ul>
+
+<h2>Iteration 2</h2>
+<p>
+Distances are recalculated using the updated centroids. Cluster assignments begin to stabilize.
+</p>
+
+<h2>Iteration 3</h2>
+<p>
+Final adjustments are made. Centroids no longer change significantly, indicating convergence.
+</p>
+
+<h2>Variance Comparison</h2>
+<ul>
+    <li>Iteration 1: 50</li>
+    <li>Iteration 2: 30</li>
+    <li>Iteration 3: 20</li>
+</ul>
+
+<h2>Variance Graph</h2>
+<img src="{{ url_for('static', filename='images/variance_plot.png') }}" width="500">
+
+<h2>Interpretation of Results</h2>
+<p>
+The variance decreases across iterations, which means the clusters become more compact.
+Initially, the centroids were randomly assigned, but over time they adjusted to better represent the data.
+By the third iteration, the centroids stabilized, showing that the algorithm converged.
+</p>
+
+{% endblock %}

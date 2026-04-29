@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Unsupervised Machine Learning - Basic Concepts</h1>
+
+<h2>What is Unsupervised Learning?</h2>
+<p>
+Unsupervised learning is a type of machine learning where the model works with data that has no labeled outputs. The goal is to find hidden patterns or structures within the data.
+</p>
+
+<h2>What is Clustering?</h2>
+<p>
+Clustering is a technique used in unsupervised learning that groups similar data points together. Points in the same group are more similar to each other than to those in other groups.
+</p>
+
+<h2>What is K-Means?</h2>
+<p>
+K-Means is a clustering algorithm that divides data into K groups. Each group is defined by a centroid, which represents the center of the cluster.
+</p>
+
+<h2>Centroids</h2>
+<p>
+A centroid is the average position of all the points in a cluster. It is recalculated in each iteration of the algorithm.
+</p>
+
+<h2>Distance Metrics (Euclidean Distance)</h2>
+<p>
+Euclidean distance is used to measure how far two points are from each other. It is calculated as the straight-line distance between two points in space.
+</p>
+
+<p>
+Formula:
+</p>
+
+<p>d = √((x2 - x1)² + (y2 - y1)²)</p>
+
+<h2>Iterative Process</h2>
+<p>
+K-Means works iteratively. First, centroids are initialized. Then, each data point is assigned to the nearest centroid. After that, new centroids are calculated. This process repeats until the centroids no longer change significantly.
+</p>
+
+<h2>Variance and Convergence</h2>
+<p>
+Variance measures how spread out the data points are within a cluster. The goal of K-Means is to minimize this variance. Convergence occurs when the centroids stop changing between iterations.
+</p>
+
+<h2>Real-World Applications</h2>
+<ul>
+    <li>Customer segmentation</li>
+    <li>Market analysis</li>
+    <li>Image compression</li>
+    <li>Anomaly detection</li>
+</ul>
+
+{% endblock %}
