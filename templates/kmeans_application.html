@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Clustering Application - K-Means</h1>
+
+<h2>Context of the Data</h2>
+<p>
+This dataset represents student productivity based on daily habits such as study time, sleep patterns, social media usage, and physical activity.
+</p>
+
+<h2>Dataset Explanation</h2>
+<ul>
+    <li>Records: More than 1000 students</li>
+    <li>Features used: Study hours, sleep hours, social media usage, exercise time</li>
+</ul>
+
+<h2>Data Preprocessing</h2>
+<p>
+Only numerical features were selected for clustering. No missing values were considered in this implementation.
+</p>
+
+<h2>Model Training</h2>
+<p>
+The K-Means algorithm was used with K = 3 clusters to group students based on similar behavior patterns.
+</p>
+
+<h2>Cluster Assignment</h2>
+{{ tables[0]|safe }}
+
+<h2>Cluster Summary</h2>
+{{ summary|safe }}
+
+<h2>Centroids</h2>
+<ul>
+{% for c in centroids %}
+    <li>{{ c }}</li>
+{% endfor %}
+</ul>
+
+<h2>Visualization</h2>
+<img src="{{ url_for('static', filename='images/kmeans_plot.png') }}" width="600">
+
+<h2>Interpretation</h2>
+<p>
+The clustering results show different groups of students based on their habits.
+Each cluster represents a specific behavioral pattern in study and lifestyle.
+The centroids indicate the average characteristics of each group.
+</p>
+
+{% endblock %}

@@ -4,6 +4,9 @@ import LinearRegression
 from LogisticRegressionModel import LogisticRegressionModel
 import LinearModel
 from DecisionTreeModel import DecisionTreeModel
+import matplotlib.pyplot as plt
+import pandas as pd
+from KMeansModel import KMeansModel
 
 app = Flask(__name__)
 
@@ -115,7 +118,42 @@ def predict_logistic():
 
     return render_template("logistic_application.html", prediction=result, probability=round(probability,2))
 
+@app.route('/kmeans_application')
+def kmeans_application():
+    df = pd.read_csv('student_productivity.csv')
 
+    features = df[['study_hours_per_day', 'sleep_hours', 'social_media_hours', 'exercise_minutes']]
+
+    model = KMeansModel()
+    model.load_model('kmeans_model.pkl')
+
+    clusters = model.predict(features)
+    df['cluster'] = clusters
+
+    centroids = model.get_centroids()
+
+    plt.figure()
+    plt.scatter(df['study_hours_per_day'], df['sleep_hours'], c=clusters)
+    plt.scatter(centroids[:,0], centroids[:,1], marker='x')
+
+    plt.xlabel('Study Hours Per Day')
+    plt.ylabel('Sleep Hours')
+
+    plt.savefig('static/images/kmeans_plot.png')
+
+    summary = df.groupby('cluster')[[
+        'study_hours_per_day',
+        'sleep_hours',
+        'social_media_hours',
+        'exercise_minutes'
+    ]].mean()
+
+    return render_template(
+        'kmeans_application.html',
+        tables=[df.head(20).to_html(classes='table table-striped')],
+        summary=summary.to_html(classes='table table-bordered'),
+        centroids=centroids
+    )
 
 @app.route('/predict-exercise', methods=["GET", "POST"])
 def predict_exercise():
@@ -138,7 +176,6 @@ def unsupervised():
 @app.route('/kmeans_concepts')
 def kmeans_concepts():
     return render_template('kmeans_concepts.html')
-
 
 @app.route("/classification_model_concepts")
 def classification_model_concepts():
