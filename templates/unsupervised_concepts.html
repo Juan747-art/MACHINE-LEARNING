@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Basic Concepts of Unsupervised Learning</h2>
+
+<h3>Unsupervised Learning</h3>
+<p>Unsupervised learning is a type of machine learning where the model analyzes and groups data without labeled outputs. The objective is to discover hidden patterns or structures within the data.</p>
+
+<h3>Clustering</h3>
+<p>Clustering is a technique used to group similar data points based on their characteristics. Points in the same cluster are more similar to each other than to those in other clusters.</p>
+
+<h3>K-Means Algorithm</h3>
+<p>K-Means is a clustering algorithm that partitions data into K groups. It works by assigning data points to the nearest centroid and updating the centroids iteratively.</p>
+
+<h3>Centroids</h3>
+<p>Centroids are the center points of clusters. They are calculated as the average of all data points assigned to a cluster.</p>
+
+<h3>Euclidean Distance</h3>
+<p>Euclidean distance measures the straight-line distance between two points in space. It is used to determine how close a data point is to a centroid.</p>
+
+<h3>Iterative Process</h3>
+<p>K-Means follows an iterative process where cluster assignments and centroid positions are updated until no significant changes occur.</p>
+
+<h3>Variance and Convergence</h3>
+<p>Variance measures how spread out the data points are within a cluster. The algorithm aims to minimize this variance. Convergence occurs when clusters no longer change between iterations.</p>
+
+<h3>Real-World Applications</h3>
+<ul>
+    <li>Customer segmentation</li>
+    <li>Student performance analysis</li>
+    <li>Image compression</li>
+    <li>Anomaly detection</li>
+</ul>
+
+{% endblock %}

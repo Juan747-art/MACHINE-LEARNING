@@ -132,10 +132,13 @@ def predict_exercise():
 def logistic_concepts():
     return render_template("logistic_concepts.html")
 
-app.route("/")
-def clustering():
-    data = clustering.applyClustering()
-    return str(data["clusterSummary"])
+@app.route("/unsupervised")
+def unsupervised():
+    return render_template("unsupervised.html")
+
+@app.route("/unsupervised/concepts")
+def unsupervised_concepts():
+    return render_template("unsupervised_concepts.html")
 
 @app.route("/classification_model_concepts")
 def classification_model_concepts():
