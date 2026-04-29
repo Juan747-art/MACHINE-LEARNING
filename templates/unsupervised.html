@@ -1,14 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <h1>Unsupervised Machine Learning</h1>
 
-<p>Select a section:</p>
+<div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
 
-<ul>
-    <li><a href="/kmeans_concepts">Basic Concepts</a></li>
-    <li><a href="/kmeans_manual">K-Means Manual Exercise</a></li>
-    <li><a href="/kmeans_application">Clustering Application</a></li>
-</ul>
+    <a href="/kmeans_concepts">
+        <button style="padding: 15px 25px; font-size: 16px; cursor: pointer;">
+            Basic Concepts
+        </button>
+    </a>
+
+    <a href="/kmeans_manual">
+        <button style="padding: 15px 25px; font-size: 16px; cursor: pointer;">
+            K-Means Manual Exercise
+        </button>
+    </a>
+
+    <a href="/kmeans_application">
+        <button style="padding: 15px 25px; font-size: 16px; cursor: pointer;">
+            Clustering Application
+        </button>
+    </a>
+
+</div>
 
 {% endblock %}
